@@ -1,0 +1,3 @@
+1. Enqueue is Performed at Rear End while Dequeue is Performed at Front End.
+2. while enqueue increment only rear and for Dequeue increment only front.
+3. but for 1st insertion increment both.
