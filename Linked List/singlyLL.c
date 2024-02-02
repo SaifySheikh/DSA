@@ -41,6 +41,39 @@ void insert_at_end(struct node **head,int element){
 }
 
 
+void deletenode(struct node **head,int element){
+    if(*head==NULL){
+        printf("No element in list\n");
+        return;
+    }
+    struct node *ptr=*head;
+    
+    
+    struct node *prev=ptr;
+
+    if(ptr->data==element){
+        *head=ptr->next;
+        free(ptr);
+        return;
+    }
+
+     while (ptr != NULL && ptr->data != element) {
+        prev = ptr;
+        ptr = ptr->next;
+    }
+
+    if (ptr == NULL) {
+        printf("Element not found in the list\n");
+        return;
+    }
+
+    prev->next = ptr->next;
+    free(ptr);
+    
+
+}
+
+
 void display(struct node *head){
     printf("The list is:\n");
     while(head!=NULL){
@@ -69,7 +102,7 @@ int main(){
                     break;
             case 3: printf("Enter Element: ");
                     scanf("%d",&ele);
-                    /*del(&head,ele);*/
+                    deletenode(&head,ele);
                     break;
             case 4: display(head);
                     break;
