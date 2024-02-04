@@ -69,7 +69,7 @@ void deletenode(struct node **head,int element){
 
     prev->next = ptr->next;
     free(ptr);
-    
+
 
 }
 
